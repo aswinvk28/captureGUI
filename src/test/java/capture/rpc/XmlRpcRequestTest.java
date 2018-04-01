@@ -109,9 +109,6 @@ public class XmlRpcRequestTest extends TestCase
             String sessionId = rpcRequest.ObtainSession(true, projectCode, unitCode, null, null);
             String[] result = rpcRequest.ListFocalPoints(sessionId, null);
             Assert.assertTrue("The list metrics for filter 'all' is invalid", result.length > 0);
-            Object result2 = rpcRequest.ListMetrics(sessionId, "circulation");
-            Object[] array = (Object[]) result2;
-            Assert.assertTrue("The list metrics for filter 'all' is invalid", array.length > 0);
         } catch(Exception exception) {
             throw exception;
         }
