@@ -7,37 +7,21 @@ package com.convertdrawing.capture.service;
 
 import com.convertdrawing.capture.service.definition.Application;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Instant;
 import java.util.HashMap;
-import java.util.Properties;
 import java.util.ArrayList;
 import org.apache.xmlrpc.XmlRpcException;
-import org.apache.xmlrpc.client.XmlRpcClient;
-import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 /**
  *
  * @author aswin.vijayakumar
  */
-public class XmlRpcRequest {
-    
-    protected XmlRpcClient rpClient;
+public class XmlRpcRequest extends AbstractXmlRpcRequest {
     
     public XmlRpcRequest() throws FileNotFoundException, IOException
     {
-        Properties defaultProperties = new Properties();
-        defaultProperties.load(new FileReader("config/xmlrpc.properties"));
-        XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-        config.setServerURL(
-                new URL("http://" + 
-                        defaultProperties.getProperty("host") + ":" + 
-                        defaultProperties.getProperty("port") + "/XmlRpcService")
-        );
-        rpClient = new XmlRpcClient();
-        rpClient.setConfig(config);
+        super();
     }
     
     public String ObtainSession(boolean refresh, String projectCode, String unitCode, Instant time, String sessionParam) throws Exception

@@ -18,10 +18,30 @@
             <type>jar</type>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.opennlp</groupId>
+            <artifactId>opennlp-tools</artifactId>
+            <version>1.8.4</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+<!--    <build>
+      <resources>
+        <resource>
+          <targetPath>META-INF/bin</targetPath>
+          <filtering>false</filtering>
+          <directory>${basedir}/src/main/plexus</directory>
+          <includes>
+            <include>configuration.xml</include>
+          </includes>
+          <excludes>
+            <exclude>**/*.properties</exclude>
+          </excludes>
+        </resource>
+      </resources>
+    </build>-->
 </project>
