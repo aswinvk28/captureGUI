@@ -1,4 +1,4 @@
-# captureGUI
+# captureGUI (Enscalo)
 A Swing based Application
 
 ### Purpose of the factor capture tool
